@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Invexa"
 include(":app")
+include(":designsystem")
