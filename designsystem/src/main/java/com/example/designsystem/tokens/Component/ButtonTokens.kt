@@ -25,7 +25,7 @@ fun buttonPrimaryTokens(): ButtonPrimaryTokens {
     val elevation = MaterialTheme.invexaElevation
 
     return ButtonPrimaryTokens(
-        containerGradient = gradients.aiAccent,
+        containerGradient = gradients.primaryButton,
         content = colorScheme.onPrimary,
         shadow = elevation.glowPrimary,
         shape = SemanticShapes.shapeSM,

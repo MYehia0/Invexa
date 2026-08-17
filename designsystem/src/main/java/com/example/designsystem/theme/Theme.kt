@@ -81,17 +81,17 @@ private fun invexaColorScheme(semantic: SemanticColors, dark: Boolean) =
     }
 
 private fun invexaTypography() = Typography(
-    displayLarge = TextStyle(fontSize = AppTypography.display.size, fontWeight = AppTypography.display.weight),
-    headlineLarge = TextStyle(fontSize = AppTypography.headline.size, fontWeight = AppTypography.headline.weight),
-    titleLarge = TextStyle(fontSize = AppTypography.titleLarge.size, fontWeight = AppTypography.titleLarge.weight),
-    titleMedium = TextStyle(fontSize = AppTypography.title.size, fontWeight = AppTypography.title.weight),
-    titleSmall = TextStyle(fontSize = AppTypography.titleSmall.size, fontWeight = AppTypography.titleSmall.weight),
-    bodyLarge = TextStyle(fontSize = AppTypography.bodyLarge.size, fontWeight = AppTypography.bodyLarge.weight),
-    bodyMedium = TextStyle(fontSize = AppTypography.body.size, fontWeight = AppTypography.body.weight),
-    bodySmall = TextStyle(fontSize = AppTypography.bodySmall.size, fontWeight = AppTypography.bodySmall.weight),
-    labelLarge = TextStyle(fontSize = AppTypography.label.size, fontWeight = AppTypography.label.weight),
-    labelMedium = TextStyle(fontSize = AppTypography.caption.size, fontWeight = AppTypography.caption.weight),
-    labelSmall = TextStyle(fontSize = AppTypography.overline.size, fontWeight = AppTypography.overline.weight),
+    displayLarge = AppTypography.display,
+    headlineLarge = AppTypography.headline,
+    titleLarge = AppTypography.titleLarge,
+    titleMedium = AppTypography.title,
+    titleSmall = AppTypography.titleSmall,
+    bodyLarge = AppTypography.bodyLarge,
+    bodyMedium = AppTypography.body,
+    bodySmall = AppTypography.bodySmall,
+    labelLarge = AppTypography.label,
+    labelMedium = AppTypography.caption,
+    labelSmall = AppTypography.overline,
 )
 
 private val invexaShapes = Shapes(
