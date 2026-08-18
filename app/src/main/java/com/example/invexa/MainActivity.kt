@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.components.atoms.InvexaButton
+import com.example.designsystem.preview.Screen
 import com.example.invexa.ui.theme.InvexaTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,29 +23,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            com.example.designsystem.theme.InvexaTheme() {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    InvexaButton(
-                        text = "Click Me",
-                        onClick = { /* Handle click */ },
-                        modifier = Modifier.padding(innerPadding).fillMaxWidth()
-                    )
-                }
-            }
+            Screen()
         }
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
-    InvexaTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            InvexaButton(
-                text = "Click Me",
-                onClick = { /* Handle click */ },
-                modifier = Modifier.padding(innerPadding).fillMaxWidth()
-            )
-        }
-    }
+    Screen()
 }
