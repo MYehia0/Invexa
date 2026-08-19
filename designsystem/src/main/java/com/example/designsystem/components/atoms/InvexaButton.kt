@@ -26,12 +26,12 @@ import com.example.designsystem.tokens.raw.Spacing
 @Composable
 fun InvexaButton(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit,
     text: String? = null,
+    onClick: () -> Unit,
+    enabled: Boolean = true,
+    isLoading: Boolean = false,
     leadingIcon: ImageVector? = null,
     trailingIcon: ImageVector? = null,
-    isLoading: Boolean = false,
-    enabled: Boolean = true,
 ) {
     val tokens = buttonPrimaryTokens()
     val shape = RoundedCornerShape(tokens.shape)
