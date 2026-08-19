@@ -32,7 +32,7 @@ fun buttonPrimaryTokens(): ButtonPrimaryTokens {
     )
 }
 
-data class ButtonSecondaryTokens(
+data class OutlinedButtonTokens(
     val container: Color,
     val border: Color,
     val content: Color,
@@ -41,10 +41,10 @@ data class ButtonSecondaryTokens(
 
 @Composable
 @ReadOnlyComposable
-fun buttonSecondaryTokens(): ButtonSecondaryTokens {
+fun outlinedButtonTokens(): OutlinedButtonTokens {
     val colorScheme = MaterialTheme.colorScheme
 
-    return ButtonSecondaryTokens(
+    return OutlinedButtonTokens(
         container = colorScheme.surface,
         border = colorScheme.outline,
         content = colorScheme.primary,

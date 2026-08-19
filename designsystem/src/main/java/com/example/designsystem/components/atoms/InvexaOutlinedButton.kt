@@ -1,30 +1,28 @@
 package com.example.designsystem.components.atoms
 
-import androidx.compose.foundation.background
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.example.designsystem.theme.invexaShadow
-import com.example.designsystem.tokens.component.buttonPrimaryTokens
+import com.example.designsystem.tokens.component.outlinedButtonTokens
 import com.example.designsystem.tokens.raw.Spacing
 
+
 @Composable
-fun InvexaButton(
+fun InvexaOutlinedButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     text: String? = null,
@@ -33,19 +31,23 @@ fun InvexaButton(
     isLoading: Boolean = false,
     enabled: Boolean = true,
 ) {
-    val tokens = buttonPrimaryTokens()
+    val tokens = outlinedButtonTokens()
     val shape = RoundedCornerShape(tokens.shape)
     val isDisabled = if(isLoading) true else !enabled
+    val borderColor = if (!isDisabled) {
+        tokens.content
+    } else {
+        tokens.content.copy(alpha = 0.38f)
+    }
 
-    Button(
+    OutlinedButton(
         onClick = onClick,
         enabled = !isDisabled,
         shape = shape,
-        colors = ButtonDefaults.buttonColors(containerColor = Transparent),
+        border = BorderStroke(width = 1.dp, color = borderColor),
+        colors = ButtonDefaults.outlinedButtonColors(containerColor = tokens.container),
         contentPadding = PaddingValues(horizontal = Spacing.space450, vertical = Spacing.space300),
         modifier = modifier
-            .invexaShadow(tokens.shadow, tokens.shape)
-            .background(brush = Brush.verticalGradient(tokens.containerGradient), shape = shape),
     ) {
         val hasLeadingIconSpacing = (text != null && leadingIcon != null) || (isLoading)
         val hasTrailingIconSpacing = (text != null && trailingIcon != null) || (isLoading)
