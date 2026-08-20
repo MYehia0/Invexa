@@ -17,6 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.example.designsystem.tokens.component.ButtonSize
+import com.example.designsystem.tokens.component.contentPadding
+import com.example.designsystem.tokens.component.iconSize
 import com.example.designsystem.tokens.component.outlinedButtonTokens
 import com.example.designsystem.tokens.raw.Spacing
 
@@ -30,15 +33,12 @@ fun InvexaOutlinedButton(
     trailingIcon: ImageVector? = null,
     isLoading: Boolean = false,
     enabled: Boolean = true,
+    size: ButtonSize = ButtonSize.Medium,
 ) {
     val tokens = outlinedButtonTokens()
     val shape = RoundedCornerShape(tokens.shape)
-    val isDisabled = if(isLoading) true else !enabled
-    val borderColor = if (!isDisabled) {
-        tokens.content
-    } else {
-        tokens.content.copy(alpha = 0.38f)
-    }
+    val isDisabled = isLoading || !enabled
+    val borderColor = if (!isDisabled) tokens.content else tokens.content.copy(alpha = 0.38f)
 
     OutlinedButton(
         onClick = onClick,
@@ -46,28 +46,29 @@ fun InvexaOutlinedButton(
         shape = shape,
         border = BorderStroke(width = 1.dp, color = borderColor),
         colors = ButtonDefaults.outlinedButtonColors(containerColor = tokens.container),
-        contentPadding = PaddingValues(horizontal = Spacing.space450, vertical = Spacing.space300),
+        contentPadding = size.contentPadding(),
         modifier = modifier
     ) {
+        val iconSize = size.iconSize()
         val hasLeadingIconSpacing = (text != null && leadingIcon != null) || (isLoading)
         val hasTrailingIconSpacing = (text != null && trailingIcon != null) || (isLoading)
         if (isLoading) {
             CircularProgressIndicator(
                 color = tokens.content,
                 strokeWidth = 2.dp,
-                modifier = Modifier.size(18.dp)
+                modifier = Modifier.size(iconSize),
             )
         } else {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                leadingIcon?.let { Icon(imageVector = it, contentDescription = "$text", tint = tokens.content, modifier = Modifier.size(18.dp)) }
-                if (hasLeadingIconSpacing) {
-                    Spacer(Modifier.width(Spacing.space100))
+                leadingIcon?.let {
+                    Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
+                if (hasLeadingIconSpacing) Spacer(Modifier.width(Spacing.space100))
                 text?.let { Text(text = it, color = tokens.content) }
-                if (hasTrailingIconSpacing) {
-                    Spacer(Modifier.width(Spacing.space100))
+                if (hasTrailingIconSpacing) Spacer(Modifier.width(Spacing.space100))
+                trailingIcon?.let {
+                    Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
-                trailingIcon?.let { Icon(imageVector = it, contentDescription = "$text", tint = tokens.content, modifier = Modifier.size(18.dp)) }
             }
         }
     }

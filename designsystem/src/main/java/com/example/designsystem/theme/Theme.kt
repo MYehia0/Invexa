@@ -10,8 +10,6 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.text.TextStyle
-import com.example.designsystem.tokens.raw.Radius
 import com.example.designsystem.tokens.semantic.AppTypography
 import com.example.designsystem.tokens.semantic.DarkSemanticColors
 import com.example.designsystem.tokens.semantic.DarkSemanticElevation

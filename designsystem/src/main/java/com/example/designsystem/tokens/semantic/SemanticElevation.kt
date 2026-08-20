@@ -17,6 +17,7 @@ data class SemanticElevation(
     val level3: ElevationLevel,
     val glowPrimary: ElevationLevel,
     val glowAccent: ElevationLevel,
+    val glowScan: ElevationLevel,
 )
 
 val LightSemanticElevation = SemanticElevation(
@@ -25,6 +26,7 @@ val LightSemanticElevation = SemanticElevation(
     level3 = ElevationLevel(shadows = Elevation.shadow300),
     glowPrimary = ElevationLevel(shadows = Elevation.glowBlue),
     glowAccent = ElevationLevel(shadows = Elevation.glowViolet),
+    glowScan = ElevationLevel(shadows = Elevation.glowScan),
 )
 
 val DarkSemanticElevation = SemanticElevation(
@@ -42,4 +44,6 @@ val DarkSemanticElevation = SemanticElevation(
     ),
     glowPrimary = ElevationLevel(shadows = Elevation.glowBlue.dimmed(0.64f)),
     glowAccent = ElevationLevel(shadows = Elevation.glowViolet.dimmed(0.64f)),
+    glowScan = ElevationLevel(shadows = Elevation.glowScan.dimmed(0.64f)),
+
 )

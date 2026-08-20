@@ -20,7 +20,10 @@ import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.invexaShadow
+import com.example.designsystem.tokens.component.ButtonSize
 import com.example.designsystem.tokens.component.buttonPrimaryTokens
+import com.example.designsystem.tokens.component.contentPadding
+import com.example.designsystem.tokens.component.iconSize
 import com.example.designsystem.tokens.raw.Spacing
 
 @Composable
@@ -30,23 +33,25 @@ fun InvexaButton(
     onClick: () -> Unit,
     enabled: Boolean = true,
     isLoading: Boolean = false,
+    size: ButtonSize = ButtonSize.Medium,
     leadingIcon: ImageVector? = null,
     trailingIcon: ImageVector? = null,
 ) {
     val tokens = buttonPrimaryTokens()
     val shape = RoundedCornerShape(tokens.shape)
-    val isDisabled = if(isLoading) true else !enabled
+    val isDisabled = isLoading || !enabled
 
     Button(
         onClick = onClick,
         enabled = !isDisabled,
         shape = shape,
         colors = ButtonDefaults.buttonColors(containerColor = Transparent),
-        contentPadding = PaddingValues(horizontal = Spacing.space450, vertical = Spacing.space300),
+        contentPadding = size.contentPadding(),
         modifier = modifier
             .invexaShadow(tokens.shadow, tokens.shape)
             .background(brush = Brush.verticalGradient(tokens.containerGradient), shape = shape),
     ) {
+        val iconSize = size.iconSize()
         val hasLeadingIconSpacing = (text != null && leadingIcon != null) || (isLoading)
         val hasTrailingIconSpacing = (text != null && trailingIcon != null) || (isLoading)
         if (isLoading) {
@@ -57,15 +62,15 @@ fun InvexaButton(
             )
         } else {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                leadingIcon?.let { Icon(imageVector = it, contentDescription = "$text", tint = tokens.content, modifier = Modifier.size(18.dp)) }
-                if (hasLeadingIconSpacing) {
-                    Spacer(Modifier.width(Spacing.space100))
+                leadingIcon?.let {
+                    Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
+                if (hasLeadingIconSpacing) Spacer(Modifier.width(Spacing.space100))
                 text?.let { Text(text = it, color = tokens.content) }
-                if (hasTrailingIconSpacing) {
-                    Spacer(Modifier.width(Spacing.space100))
+                if (hasTrailingIconSpacing) Spacer(Modifier.width(Spacing.space100))
+                trailingIcon?.let {
+                    Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
-                trailingIcon?.let { Icon(imageVector = it, contentDescription = "$text", tint = tokens.content, modifier = Modifier.size(18.dp)) }
             }
         }
     }

@@ -13,7 +13,7 @@ data class ShadowLayer(
 )
 
 fun List<ShadowLayer>.dimmed(factor: Float): List<ShadowLayer> =
-    map { it.copy(alpha = it.alpha * factor) }
+    map { it.copy(alpha = (it.alpha * factor).coerceIn(0f, 1f)) }
 
 object Elevation {
     val shadow100 = listOf(
@@ -33,5 +33,8 @@ object Elevation {
     )
     val glowViolet = listOf(
         ShadowLayer(offsetY = 10.dp, blurRadius = 22.dp, color = ColorPalette.violet.t600, alpha = 0.55f)
+    )
+    val glowScan = listOf(
+        ShadowLayer(offsetY = 8.dp, blurRadius = 18.dp, color = ColorPalette.blue.t600, alpha = 0.55f),
     )
 }

@@ -19,9 +19,12 @@ data class InvexaExtendedColors(
     val surfaceOverlay: Color,
     val outlineFocus: Color,
 
+    val textPrimary: Color,
     val textSecondary: Color,
     val textTertiary: Color,
     val textDisabled: Color,
+    val textDefault: Color,
+    val textMuted: Color,
     val iconDefault: Color,
     val iconMuted: Color,
 )
@@ -41,9 +44,12 @@ fun InvexaExtendedColors(semantic: SemanticColors) = InvexaExtendedColors(
     surfaceOverlay = semantic.surfaceOverlay,
     outlineFocus = semantic.outlineFocus,
 
+    textPrimary = semantic.textPrimary,
     textSecondary = semantic.textSecondary,
     textTertiary = semantic.textTertiary,
     textDisabled = semantic.textDisabled,
+    textDefault = semantic.textDefault,
+    textMuted = semantic.textMuted,
     iconDefault = semantic.iconDefault,
     iconMuted = semantic.iconMuted,
 )
