@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,12 +20,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.designsystem.components.atoms.InvexaAvatar
+import com.example.designsystem.components.atoms.InvexaBadge
 import com.example.designsystem.components.atoms.InvexaButton
+import com.example.designsystem.components.atoms.InvexaCheckbox
+import com.example.designsystem.components.atoms.InvexaChip
 import com.example.designsystem.components.atoms.InvexaDangerButton
 import com.example.designsystem.components.atoms.InvexaOutlinedButton
+import com.example.designsystem.components.atoms.InvexaSwitch
 import com.example.designsystem.components.atoms.InvexaTextButton
 import com.example.designsystem.components.atoms.InvexaTextField
 import com.example.designsystem.theme.InvexaTheme
+import com.example.designsystem.tokens.component.AvatarSize
+import com.example.designsystem.tokens.component.BadgeTone
 import com.example.designsystem.tokens.raw.Spacing
 
 @Composable
@@ -33,6 +41,10 @@ fun Screen() {
         darkTheme = false
     ) {
         var fieldValue by remember { mutableStateOf("") }
+        val chips = listOf("All", "Low Stock", "Completed", "Flagged")
+        var chipIndex by remember { mutableStateOf(0) }
+        var switchOn by remember { mutableStateOf(true) }
+        var checkboxOn by remember { mutableStateOf(false) }
 
         Scaffold { innerPadding ->
             Column(
@@ -56,10 +68,41 @@ fun Screen() {
                         }
                     }
                     item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.space200)) {
+                            chips.forEachIndexed { index, label ->
+                                InvexaChip(label = label, selected = index == chipIndex, onClick = { chipIndex = index })
+                            }
+                        }
+                    }
+                    item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.space200)) {
+                            InvexaBadge(label = "In Stock", tone = BadgeTone.Success)
+                            InvexaBadge(label = "Low Stock", tone = BadgeTone.Warning)
+                            InvexaBadge(label = "Out of Stock", tone = BadgeTone.Error)
+                            InvexaBadge(label = "In Progress", tone = BadgeTone.Primary)
+                        }
+                    }
+                    item {
                         Column(verticalArrangement = Arrangement.spacedBy(Spacing.space300)) {
                             InvexaTextField(value = fieldValue, onValueChange = { fieldValue = it }, label = "Email", placeholder = "you@company.com")
                             InvexaTextField(value = "", onValueChange = {}, label = "Password", isPassword = true, helperText = "At least 8 characters")
                             InvexaTextField(value = "", onValueChange = {}, label = "SKU", errorText = "This field is required")
+                        }
+                    }
+                    item {
+                        Column(verticalArrangement = Arrangement.spacedBy(Spacing.space300)) {
+                            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                                Text("Enable AI Insights", modifier = Modifier.weight(1f))
+                                InvexaSwitch(checked = switchOn, onCheckedChange = { switchOn = it })
+                            }
+                            InvexaCheckbox(label = "Remember me", checked = checkboxOn, onCheckedChange = { checkboxOn = it })
+                        }
+                    }
+                    item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.space300)) {
+                            InvexaAvatar(initialsText = "MA", size = AvatarSize.Small)
+                            InvexaAvatar(initialsText = "MA", size = AvatarSize.Medium)
+                            InvexaAvatar(initialsText = "MA", size = AvatarSize.Large, showCameraBadge = true)
                         }
                     }
                 }

@@ -4,9 +4,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import com.example.designsystem.theme.invexaColors
-import com.example.designsystem.tokens.semantic.SemanticShapes
 
 enum class BadgeTone {
     Neutral,
@@ -19,7 +17,6 @@ enum class BadgeTone {
 data class BadgeTokens(
     val container: Color,
     val content: Color,
-    val shape: Dp,
 )
 
 @Composable
@@ -38,6 +35,5 @@ fun badgeTokens(tone: BadgeTone): BadgeTokens {
     return BadgeTokens(
         container = container,
         content = content,
-        shape = SemanticShapes.shapeXS,
     )
 }

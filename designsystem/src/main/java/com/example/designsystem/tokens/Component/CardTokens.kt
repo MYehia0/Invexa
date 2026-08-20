@@ -1,2 +1,2 @@
-package com.example.designsystem.tokens.Component
+package com.example.designsystem.tokens.component
 

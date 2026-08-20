@@ -31,7 +31,6 @@ fun InvexaBadge(
     showDot: Boolean = true,
 ) {
     val tokens = badgeTokens(tone)
-//    val shape = RoundedCornerShape(tokens.shape)
 
     Badge(
         modifier = modifier,
