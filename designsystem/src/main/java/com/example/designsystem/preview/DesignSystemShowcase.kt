@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,6 +31,9 @@ import com.example.designsystem.components.atoms.InvexaOutlinedButton
 import com.example.designsystem.components.atoms.InvexaSwitch
 import com.example.designsystem.components.atoms.InvexaTextButton
 import com.example.designsystem.components.atoms.InvexaTextField
+import com.example.designsystem.components.molecules.InvexaCard
+import com.example.designsystem.components.molecules.InvexaStatusCard
+import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.theme.InvexaTheme
 import com.example.designsystem.tokens.component.AvatarSize
 import com.example.designsystem.tokens.component.BadgeTone
@@ -103,6 +107,31 @@ fun Screen() {
                             InvexaAvatar(initialsText = "MA", size = AvatarSize.Small)
                             InvexaAvatar(initialsText = "MA", size = AvatarSize.Medium)
                             InvexaAvatar(initialsText = "MA", size = AvatarSize.Large, showCameraBadge = true)
+                        }
+                    }
+
+                    item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.space300)) {
+                            InvexaStatusCard(
+                                modifier = Modifier.weight(1f),
+                                icon = InvexaIcons.Sessions,
+                                value = "128",
+                                label = "Items Audited",
+                                progressFraction = 0.72f,
+                            )
+                            InvexaStatusCard(
+                                modifier = Modifier.weight(1f),
+                                icon = InvexaIcons.Warning,
+                                value = "6",
+                                label = "Discrepancies",
+                                progressFraction = 0.2f,
+                            )
+                        }
+                    }
+                    item {
+                        InvexaCard(modifier = Modifier.fillMaxWidth()) {
+                            Text("Audit Summary", color = MaterialTheme.colorScheme.onSurface)
+                            Text("94% match rate across 128 scanned items.")
                         }
                     }
                 }
