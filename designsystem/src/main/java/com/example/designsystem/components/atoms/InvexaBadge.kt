@@ -68,33 +68,16 @@ fun InvexaBadgePrev(){
             )
             InvexaBadge(
                 modifier = Modifier,
-                label = "Success",
-                tone = BadgeTone.Success,
-                showDot = false,
-            )
-            InvexaBadge(
-                modifier = Modifier,
                 label = "Warning",
                 tone = BadgeTone.Warning,
                 showDot = true,
             )
-            InvexaBadge(
-                modifier = Modifier,
-                label = "Warning",
-                tone = BadgeTone.Warning,
-                showDot = false,
-            )
+
             InvexaBadge(
                 modifier = Modifier,
                 label = "Error",
                 tone = BadgeTone.Error,
                 showDot = true,
-            )
-            InvexaBadge(
-                modifier = Modifier,
-                label = "Error",
-                tone = BadgeTone.Error,
-                showDot = false,
             )
             InvexaBadge(
                 modifier = Modifier,
@@ -104,21 +87,9 @@ fun InvexaBadgePrev(){
             )
             InvexaBadge(
                 modifier = Modifier,
-                label = "Neutral",
-                tone = BadgeTone.Neutral,
-                showDot = false,
-            )
-            InvexaBadge(
-                modifier = Modifier,
                 label = "Primary",
                 tone = BadgeTone.Primary,
                 showDot = true,
-            )
-            InvexaBadge(
-                modifier = Modifier,
-                label = "Primary",
-                tone = BadgeTone.Primary,
-                showDot = false,
             )
         }
     }
