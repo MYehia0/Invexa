@@ -1,11 +1,8 @@
 package com.example.designsystem.components.organisms
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,7 +16,6 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.tokens.component.appBarTokens
-import com.example.designsystem.tokens.raw.Spacing
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,8 +38,7 @@ fun InvexaAppBar(
                     end = Offset(size.width, size.height),
                     strokeWidth = 1.dp.toPx(),
                 )
-            }
-            .padding(horizontal = Spacing.space300),
+            },
         navigationIcon = {
             onBackClick?.let {
                 IconButton(onClick = it) {
@@ -60,7 +55,6 @@ fun InvexaAppBar(
                 title,
                 color = tokens.title,
                 modifier = Modifier
-                    .padding(start = if (onBackClick == null) Spacing.space300 else 0.dp),
             )
         },
         actions = actions

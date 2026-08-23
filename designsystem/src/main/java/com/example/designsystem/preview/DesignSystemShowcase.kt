@@ -10,12 +10,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SearchOff
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -38,7 +40,10 @@ import com.example.designsystem.components.molecules.InvexaProgressBar
 import com.example.designsystem.components.molecules.InvexaSearchBar
 import com.example.designsystem.components.molecules.InvexaSkeletonListRow
 import com.example.designsystem.components.molecules.InvexaStatusCard
+import com.example.designsystem.components.organisms.BottomNavItem
 import com.example.designsystem.components.organisms.InvexaAppBar
+import com.example.designsystem.components.organisms.InvexaBottomNav
+import com.example.designsystem.components.organisms.InvexaCenterFab
 import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.theme.InvexaTheme
 import com.example.designsystem.theme.invexaColors
@@ -51,16 +56,42 @@ fun Screen() {
     InvexaTheme(
         darkTheme = false
     ) {
-        var chipIndex by remember { mutableStateOf(0) }
+        var chipIndex by remember { mutableIntStateOf(0) }
         var fieldValue by remember { mutableStateOf("") }
         var searchQuery by remember { mutableStateOf("") }
         var switchOn by remember { mutableStateOf(true) }
         var checkboxOn by remember { mutableStateOf(false) }
+        var navIndex by remember { mutableIntStateOf(0) }
 
         val chips = listOf("All", "Low Stock", "Completed", "Flagged")
 
         Scaffold(
-            topBar = { InvexaAppBar(title = "Design System") },
+            topBar = {
+                InvexaAppBar(
+                    title = "Design System",
+//                    onBackClick = {}
+                )
+            },
+            bottomBar = {
+                InvexaBottomNav(
+                    items = listOf(
+                        BottomNavItem("Home", InvexaIcons.Dashboard),
+                        BottomNavItem("Sessions", InvexaIcons.Sessions),
+                        BottomNavItem("Reports", InvexaIcons.Reports),
+                        BottomNavItem("Settings", InvexaIcons.Settings),
+                    ),
+                    selectedIndex = navIndex,
+                    onItemSelected = { navIndex = it },
+                )
+            },
+            floatingActionButton = {
+                InvexaCenterFab(
+                    label = "Scan",
+                    icon = InvexaIcons.Scan,
+                    onFabClick = {},
+                )
+            },
+            floatingActionButtonPosition = FabPosition.Center
         ) { innerPadding ->
             Column(
                 modifier = Modifier
