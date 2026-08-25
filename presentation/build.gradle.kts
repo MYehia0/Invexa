@@ -27,8 +27,11 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.androidx.compose.bom))
+
     implementation(project(":designsystem"))
+    implementation(project(":domain"))
+
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.material3)

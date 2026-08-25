@@ -8,7 +8,7 @@
         <item name="windowSplashScreenBackground">#2563EB</item>
 
         <!-- App icon or vector animation centered on the screen -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
 
         <!-- Theme to switch to after the splash screen finishes -->
         <item name="postSplashScreenTheme">@style/Theme.Invexa</item>

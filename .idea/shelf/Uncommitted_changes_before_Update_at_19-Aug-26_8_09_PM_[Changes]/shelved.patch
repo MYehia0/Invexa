@@ -1,0 +1,168 @@
+Index: designsystem/src/main/java/com/example/designsystem/preview/DesignSystemShowcase.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.designsystem.preview\r\n\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.fillMaxWidth\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.material3.Scaffold\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.example.designsystem.components.atoms.InvexaButton\r\nimport com.example.designsystem.theme.InvexaTheme\r\n\r\n\r\n@Preview(\r\n    showSystemUi = true,\r\n    showBackground = true\r\n)\r\n@Composable\r\nfun ScreenPreview (){\r\n    InvexaTheme(\r\n        darkTheme = false\r\n    ) {\r\n        Scaffold { innerPadding ->\r\n            Column(\r\n                modifier = Modifier.padding(innerPadding).fillMaxSize()\r\n            ) {\r\n                InvexaButton(\r\n                    text = \"Click Me\",\r\n                    onClick = { /* Handle click */ },\r\n                    modifier = Modifier.padding(8.dp).fillMaxWidth()\r\n                )\r\n            }\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/designsystem/src/main/java/com/example/designsystem/preview/DesignSystemShowcase.kt b/designsystem/src/main/java/com/example/designsystem/preview/DesignSystemShowcase.kt
+--- a/designsystem/src/main/java/com/example/designsystem/preview/DesignSystemShowcase.kt	(revision d4ec2875adc7a5ee2150b58ed7385554b88d0a59)
++++ b/designsystem/src/main/java/com/example/designsystem/preview/DesignSystemShowcase.kt	(date 1787001502177)
+@@ -1,16 +1,29 @@
+ package com.example.designsystem.preview
+ 
++import androidx.compose.foundation.background
+ import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.PaddingValues
++import androidx.compose.foundation.layout.Spacer
+ import androidx.compose.foundation.layout.fillMaxSize
+ import androidx.compose.foundation.layout.fillMaxWidth
+ import androidx.compose.foundation.layout.padding
++import androidx.compose.material3.Button
++import androidx.compose.material3.ButtonDefaults
++import androidx.compose.material3.ElevatedButton
++import androidx.compose.material3.FilledTonalButton
++import androidx.compose.material3.OutlinedButton
+ import androidx.compose.material3.Scaffold
++import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
+ import androidx.compose.ui.Modifier
++import androidx.compose.ui.graphics.Brush
++import androidx.compose.ui.graphics.Color.Companion.Transparent
+ import androidx.compose.ui.tooling.preview.Preview
+ import androidx.compose.ui.unit.dp
+ import com.example.designsystem.components.atoms.InvexaButton
+ import com.example.designsystem.theme.InvexaTheme
++import com.example.designsystem.theme.invexaShadow
++import com.example.designsystem.tokens.raw.Spacing
+ 
+ 
+ @Preview(
+@@ -26,11 +39,38 @@
+             Column(
+                 modifier = Modifier.padding(innerPadding).fillMaxSize()
+             ) {
++                Button(
++                    onClick = {},
++                    Modifier.padding(8.dp).fillMaxWidth()
++                ) {
++                    Text(text = "Click Me")
++                }
+                 InvexaButton(
+                     text = "Click Me",
+                     onClick = { /* Handle click */ },
+                     modifier = Modifier.padding(8.dp).fillMaxWidth()
+                 )
++                OutlinedButton(
++                    onClick = {},
++                    Modifier.padding(8.dp).fillMaxWidth()
++                ) {
++                    Text(text = "Click Me")
++                }
++                Spacer(modifier = Modifier.padding(Spacing.space400))
++                FilledTonalButton(
++                    onClick = {},
++                    Modifier.padding(8.dp).fillMaxWidth()
++                ) {
++                    Text(text = "Click Me")
++                }
++                Spacer(modifier = Modifier.padding(Spacing.space400))
++                ElevatedButton(
++                    onClick = {},
++                    Modifier.padding(8.dp).fillMaxWidth()
++                ) {
++                    Text(text = "Click Me")
++                }
++
+             }
+         }
+ 
+Index: app/src/main/java/com/example/invexa/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.invexa\r\n\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.activity.enableEdgeToEdge\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.fillMaxWidth\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.material3.Scaffold\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.example.designsystem.components.atoms.InvexaButton\r\nimport com.example.invexa.ui.theme.InvexaTheme\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        enableEdgeToEdge()\r\n        setContent {\r\n            com.example.designsystem.theme.InvexaTheme() {\r\n                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->\r\n                    InvexaButton(\r\n                        text = \"Click Me\",\r\n                        onClick = { /* Handle click */ },\r\n                        modifier = Modifier.padding(innerPadding).fillMaxWidth()\r\n                    )\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Preview(showBackground = true)\r\n@Composable\r\nfun GreetingPreview() {\r\n    InvexaTheme {\r\n        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->\r\n            InvexaButton(\r\n                text = \"Click Me\",\r\n                onClick = { /* Handle click */ },\r\n                modifier = Modifier.padding(innerPadding).fillMaxWidth()\r\n            )\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/invexa/MainActivity.kt b/app/src/main/java/com/example/invexa/MainActivity.kt
+--- a/app/src/main/java/com/example/invexa/MainActivity.kt	(revision d4ec2875adc7a5ee2150b58ed7385554b88d0a59)
++++ b/app/src/main/java/com/example/invexa/MainActivity.kt	(date 1787001615969)
+@@ -5,9 +5,14 @@
+ import androidx.activity.compose.setContent
+ import androidx.activity.enableEdgeToEdge
+ import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.Spacer
+ import androidx.compose.foundation.layout.fillMaxSize
+ import androidx.compose.foundation.layout.fillMaxWidth
+ import androidx.compose.foundation.layout.padding
++import androidx.compose.material3.Button
++import androidx.compose.material3.ElevatedButton
++import androidx.compose.material3.FilledTonalButton
++import androidx.compose.material3.OutlinedButton
+ import androidx.compose.material3.Scaffold
+ import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
+@@ -15,6 +20,7 @@
+ import androidx.compose.ui.tooling.preview.Preview
+ import androidx.compose.ui.unit.dp
+ import com.example.designsystem.components.atoms.InvexaButton
++import com.example.designsystem.tokens.raw.Spacing
+ import com.example.invexa.ui.theme.InvexaTheme
+ 
+ class MainActivity : ComponentActivity() {
+@@ -22,14 +28,48 @@
+         super.onCreate(savedInstanceState)
+         enableEdgeToEdge()
+         setContent {
+-            com.example.designsystem.theme.InvexaTheme() {
+-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+-                    InvexaButton(
+-                        text = "Click Me",
+-                        onClick = { /* Handle click */ },
+-                        modifier = Modifier.padding(innerPadding).fillMaxWidth()
+-                    )
++            com.example.designsystem.theme.InvexaTheme(
++                darkTheme = false
++            ) {
++                Scaffold { innerPadding ->
++                    Column(
++                        modifier = Modifier.padding(innerPadding).fillMaxSize()
++                    ) {
++                        Button(
++                            onClick = {},
++                            Modifier.padding(8.dp).fillMaxWidth()
++                        ) {
++                            Text(text = "Click Me")
++                        }
++                        InvexaButton(
++                            text = "Click Me",
++                            onClick = { /* Handle click */ },
++                            modifier = Modifier.padding(8.dp).fillMaxWidth()
++                        )
++                        OutlinedButton(
++                            onClick = {},
++                            Modifier.padding(8.dp).fillMaxWidth()
++                        ) {
++                            Text(text = "Click Me")
++                        }
++                        Spacer(modifier = Modifier.padding(Spacing.space400))
++                        FilledTonalButton(
++                            onClick = {},
++                            Modifier.padding(8.dp).fillMaxWidth()
++                        ) {
++                            Text(text = "Click Me")
++                        }
++                        Spacer(modifier = Modifier.padding(Spacing.space400))
++                        ElevatedButton(
++                            onClick = {},
++                            Modifier.padding(8.dp).fillMaxWidth()
++                        ) {
++                            Text(text = "Click Me")
++                        }
++
++                    }
+                 }
++
+             }
+         }
+     }
