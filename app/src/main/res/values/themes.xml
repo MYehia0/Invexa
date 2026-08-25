@@ -2,4 +2,15 @@
 <resources>
 
     <style name="Theme.Invexa" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Background color of the splash screen -->
+        <item name="windowSplashScreenBackground">#2563EB</item>
+
+        <!-- App icon or vector animation centered on the screen -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+
+        <!-- Theme to switch to after the splash screen finishes -->
+        <item name="postSplashScreenTheme">@style/Theme.Invexa</item>
+    </style>
 </resources>
