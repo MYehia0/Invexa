@@ -4,15 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +25,6 @@ import com.example.designsystem.tokens.semantic.SemanticShapes
 fun InvexaCenterFab(
     modifier: Modifier = Modifier,
     icon: ImageVector,
-    label: String? = null,
     onFabClick: () -> Unit
 ) {
     val tokens = centerFabTokens()
@@ -54,17 +49,9 @@ fun InvexaCenterFab(
         ){
             Icon(
                 imageVector = icon,
-                contentDescription = label,
+                contentDescription = null,
                 tint = Color.White,
                 modifier = Modifier.size(32.dp)
-            )
-        }
-        label?.let {
-            Spacer(modifier = Modifier.height(6.dp))
-            Text(
-                text = it,
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }

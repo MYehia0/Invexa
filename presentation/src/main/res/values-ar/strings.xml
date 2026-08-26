@@ -1,0 +1,20 @@
+<resources>
+    <!-- Header -->
+    <string name="app_name">إنفكسا</string>
+    <string name="welcome_back">مرحباً بعودتك</string>
+    <string name="sign_in_to_continue">قم بتسجيل الدخول للمتابعة إلى حسابك</string>
+
+    <!-- Login Form -->
+    <string name="email_label">البريد الإلكتروني</string>
+    <string name="email_placeholder">you@company.com</string>
+    <string name="password_label">كلمة المرور</string>
+    <string name="password_helper_text">8 أحرف على الأقل</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="login_button">تسجيل الدخول</string>
+
+    <!-- Footer / Create Account -->
+    <string name="new_to_invexa">جديد على إنفكسا؟</string>
+    <string name="create_company_account">أنشئ حساب شركتك</string>
+    <string name="secured_by_enterprise">مؤمن بواسطة أمان على مستوى المؤسسات</string>
+</resources>

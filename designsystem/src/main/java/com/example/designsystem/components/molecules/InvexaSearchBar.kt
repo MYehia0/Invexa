@@ -4,8 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -41,7 +39,7 @@ fun InvexaSearchBar(
             onValueChange = onQueryChange,
             modifier = Modifier.fillMaxWidth(),
             placeholder = placeholder?.let { { Text(it, color = tokens.placeholder) } },
-            leadingIcon = { Icon(imageVector = Icons.Filled.Search, contentDescription = null, tint = extended.iconMuted) },
+            leadingIcon = { Icon(imageVector = InvexaIcons.Search, contentDescription = null, tint = extended.iconMuted) },
             trailingIcon = when {
                 query.isNotBlank() -> {
                     {

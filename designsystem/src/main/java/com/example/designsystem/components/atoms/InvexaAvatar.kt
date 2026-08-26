@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.tokens.component.AvatarSize
 import com.example.designsystem.tokens.component.avatarTokens
 import com.example.designsystem.tokens.raw.Spacing
@@ -65,7 +64,7 @@ fun InvexaAvatar(
                     .background(tokens.avatarContainer, CircleShape)
             ) {
                 Icon(
-                    imageVector = Icons.Filled.CameraAlt,
+                    imageVector = InvexaIcons.Camera,
                     contentDescription = "Change photo",
                     tint = tokens.avatarContent,
                     modifier = Modifier.size(14.dp),

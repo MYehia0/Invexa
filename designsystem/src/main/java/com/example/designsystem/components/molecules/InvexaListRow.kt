@@ -7,14 +7,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.theme.invexaColors
 import com.example.designsystem.tokens.raw.Spacing
 
@@ -47,7 +46,7 @@ fun InvexaListRow(
         trailing?.invoke()
         if (showChevron) {
             Spacer(Modifier.width(Spacing.space100))
-            Icon(Icons.Filled.ChevronRight, contentDescription = null, tint = extended.iconMuted)
+            Icon(InvexaIcons.ChevronRight, contentDescription = null, tint = extended.iconMuted)
         }
     }
 }

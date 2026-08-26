@@ -10,6 +10,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.designsystem.preview.Screen
 import com.example.designsystem.theme.InvexaTheme
 import com.example.presentation.login.LoginScreen
 
@@ -26,13 +27,24 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            InvexaTheme {
+            InvexaTheme(
+                darkTheme = false
+            ) {
                 val isLoading by viewModel.isLoading.collectAsState()
                 val navController = rememberNavController()
                 if (!isLoading) {
                     NavHost(navController = navController, startDestination = "login") {
                         composable("login") {
-                            LoginScreen()
+                            LoginScreen(
+                                onClickLogin = {
+                                    navController.navigate("preview")
+                                },
+                                onClickForgotPassword = {},
+                                onClickCreateAccount = {},
+                            )
+                        }
+                        composable("preview") {
+                            Screen()
                         }
                     }
                 }

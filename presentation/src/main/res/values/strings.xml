@@ -1,1 +1,20 @@
-<resources></resources>
+<resources>
+    <!-- Header -->
+    <string name="app_name">invexa</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="sign_in_to_continue">Sign in to continue to your account</string>
+
+    <!-- Login Form -->
+    <string name="email_label">Email</string>
+    <string name="email_placeholder">you@company.com</string>
+    <string name="password_label">Password</string>
+    <string name="password_helper_text">At least 8 characters</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forget Password?</string>
+    <string name="login_button">Login</string>
+
+    <!-- Footer / Create Account -->
+    <string name="new_to_invexa">New to Invexa?</string>
+    <string name="create_company_account">Create your company account</string>
+    <string name="secured_by_enterprise">Secured by enterprise-grade security</string>
+</resources>

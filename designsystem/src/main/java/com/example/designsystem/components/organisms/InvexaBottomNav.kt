@@ -86,6 +86,7 @@ private fun RowScope.NavItem(
         modifier = modifier,
         selected = selected,
         onClick = onClick,
+        alwaysShowLabel = false,
         colors = NavigationBarItemDefaults.colors(
             selectedIconColor = tokens.itemActive,
             selectedTextColor= tokens.itemActive,

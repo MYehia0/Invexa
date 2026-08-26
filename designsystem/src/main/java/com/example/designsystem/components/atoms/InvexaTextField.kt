@@ -3,6 +3,7 @@ package com.example.designsystem.components.atoms
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -47,6 +48,7 @@ fun InvexaTextField (
     ){
     val tokens = inputTokens()
     val extended = MaterialTheme.invexaColors
+    val typography = MaterialTheme.typography
     val colors: TextFieldColors = InvexaTextFieldDefaults.colors()
     val isError = errorText != null
 
@@ -63,13 +65,25 @@ fun InvexaTextField (
             label = label?.let { { Text(it) } },
             placeholder = placeholder?.let { { Text(it, color = tokens.placeholder) } },
             leadingIcon = leadingIcon?.let {
-                { Icon(it, contentDescription = null, tint = extended.iconMuted) }
+                {
+                    Icon(
+                        it,
+                        contentDescription = null,
+                        tint = extended.iconMuted,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
             },
             trailingIcon = when {
                 trailingIcon != null && onTrailingIconClick != null -> {
                     {
                         IconButton(onClick = onTrailingIconClick) {
-                            Icon(trailingIcon, contentDescription = null, tint = extended.iconMuted)
+                            Icon(
+                                trailingIcon,
+                                contentDescription = null,
+                                tint = extended.iconMuted,
+                                modifier = Modifier.size(20.dp)
+                            )
                         }
                     }
                 }
@@ -89,7 +103,9 @@ fun InvexaTextField (
             Text(
                 text = caption,
                 color = if (isError) tokens.errorText else tokens.helperText,
+                style = typography.labelMedium,
                 modifier = Modifier.padding(start = Spacing.space200, top = 4.dp),
+
             )
         }
     }
