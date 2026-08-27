@@ -12,7 +12,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.designsystem.preview.Screen
 import com.example.designsystem.theme.InvexaTheme
+import com.example.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.presentation.login.LoginScreen
+import com.example.presentation.register.RegisterScreen
+import com.example.presentation.register.WarehouseOnboardingScreen
 
 class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels()
@@ -39,8 +42,37 @@ class MainActivity : ComponentActivity() {
                                 onClickLogin = {
                                     navController.navigate("preview")
                                 },
-                                onClickForgotPassword = {},
-                                onClickCreateAccount = {},
+                                onClickForgotPassword = {
+                                    navController.navigate("forgot_password")
+                                },
+                                onClickCreateAccount = {
+                                    navController.navigate("register")
+                                },
+                            )
+                        }
+                        composable("register") {
+                            RegisterScreen(
+                                onClickCreateAccount = {
+                                    navController.navigate("warehouse_onboarding")
+                                },
+                                onBackToLogin = {
+                                    navController.popBackStack()
+                                }
+                            )
+                        }
+                        composable("warehouse_onboarding") {
+                            WarehouseOnboardingScreen(
+                                onBackToLogin = {
+                                    navController.popBackStack()
+                                }
+                            )
+                        }
+                        composable("forgot_password") {
+                            ForgotPasswordScreen(
+                                onSendResetClick = {},
+                                onBackToLoginClick = {
+                                    navController.popBackStack()
+                                }
                             )
                         }
                         composable("preview") {

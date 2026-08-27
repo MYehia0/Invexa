@@ -1,6 +1,5 @@
-package com.example.presentation.login
+package com.example.presentation.register
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,11 +7,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -22,32 +21,35 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.designsystem.components.atoms.InvexaButton
 import com.example.designsystem.components.atoms.InvexaCheckbox
 import com.example.designsystem.components.atoms.InvexaTextButton
 import com.example.designsystem.components.atoms.InvexaTextField
+import com.example.designsystem.components.molecules.InvexaStepProgressBar
+import com.example.designsystem.components.organisms.InvexaAppBar
 import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.theme.invexaColors
 import com.example.designsystem.tokens.component.ButtonSize
 import com.example.designsystem.tokens.raw.Spacing
 import com.example.presentation.R
-import com.example.presentation.login.composables.SecurityFooter
-import com.example.presentation.login.composables.HeaderScreen
-
 
 @Composable
-fun LoginScreen(
-    onClickLogin: () -> Unit,
-    onClickForgotPassword: () -> Unit,
-    onClickCreateAccount: () -> Unit
+fun RegisterScreen (
+    onClickCreateAccount: () -> Unit,
+    onBackToLogin: () -> Unit
 ) {
     var emailValue by remember { mutableStateOf("") }
+    var companyNameValue by remember { mutableStateOf("") }
+    var fullNameValue by remember { mutableStateOf("") }
     var passValue by remember { mutableStateOf("") }
     var checkboxOn by remember { mutableStateOf(false) }
     var isPasswordVisible by remember { mutableStateOf(false) }
 
-    LoginScreenContent(
+    RegisterScreenContent(
+        companyNameValue = companyNameValue,
+        onCompanyNameChange = { companyNameValue = it },
+        fullNameValue = fullNameValue,
+        onFullNameChange = { fullNameValue = it },
         emailValue = emailValue,
         onEmailChange = { emailValue = it },
         passValue = passValue,
@@ -56,16 +58,17 @@ fun LoginScreen(
         onCheckboxChange = { checkboxOn = it },
         isPasswordVisible = isPasswordVisible,
         onPasswordVisibilityToggle = { isPasswordVisible = !isPasswordVisible },
-        onClickLogin = onClickLogin,
-        onClickForgotPassword = onClickForgotPassword,
-        onClickCreateAccount = onClickCreateAccount
+        onClickCreateAccount = onClickCreateAccount,
+        onBackToLogin = onBackToLogin
     )
 }
 
-
-
 @Composable
-fun LoginScreenContent(
+fun RegisterScreenContent (
+    companyNameValue: String,
+    onCompanyNameChange: (String) -> Unit,
+    fullNameValue: String,
+    onFullNameChange: (String) -> Unit,
     emailValue: String,
     onEmailChange: (String) -> Unit,
     passValue: String,
@@ -74,35 +77,64 @@ fun LoginScreenContent(
     onCheckboxChange: (Boolean) -> Unit,
     isPasswordVisible: Boolean,
     onPasswordVisibilityToggle: () -> Unit,
-    onClickLogin: () -> Unit,
-    onClickForgotPassword: () -> Unit,
-    onClickCreateAccount: () -> Unit
-){
-
+    onClickCreateAccount: () -> Unit,
+    onBackToLogin: () -> Unit
+) {
     val scrollState = rememberScrollState()
 
     val typography = MaterialTheme.typography
-    val extend = MaterialTheme.invexaColors
     val colors = MaterialTheme.colorScheme
+    val extend = MaterialTheme.invexaColors
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .imePadding()
-    ) {
+    Scaffold(
+        topBar = {
+            InvexaAppBar(
+                onBackClick = onBackToLogin
+            )
+        }
+    ){
         Column(
             modifier = Modifier
-                .weight(1f)
-                .background(colors.background)
-                .verticalScroll(scrollState)
+                .fillMaxSize()
+                .padding(it)
+                .padding(horizontal = Spacing.space500, vertical = Spacing.space600)
+                .verticalScroll(scrollState),
         ) {
-            HeaderScreen()
+            InvexaStepProgressBar(totalSteps = 2, currentStep = 1)
+            Spacer(modifier = Modifier.height(Spacing.space450))
+
+            Text(
+                text = stringResource(R.string.register_title),
+                style = typography.titleLarge
+            )
+            Spacer(modifier = Modifier.height(Spacing.space100))
+            Text(
+                text = stringResource(R.string.register_description),
+                style = typography.bodySmall,
+                color = colors.onSurfaceVariant
+            )
 
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = Spacing.space500, vertical = Spacing.space500),
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(Spacing.space400)
             ) {
+
+                InvexaTextField(
+                    value = companyNameValue,
+                    onValueChange = onCompanyNameChange,
+                    label = stringResource(id = R.string.company_name_label),
+                    leadingIcon = InvexaIcons.Company,
+                    placeholder = stringResource(id = R.string.company_name_placeholder)
+                )
+                InvexaTextField(
+                    value = fullNameValue,
+                    onValueChange = onFullNameChange,
+                    label = stringResource(id = R.string.full_name_label),
+                    leadingIcon = InvexaIcons.Username,
+                    placeholder = stringResource(id = R.string.full_name_placeholder)
+                )
+
                 InvexaTextField(
                     value = emailValue,
                     onValueChange = onEmailChange,
@@ -110,70 +142,48 @@ fun LoginScreenContent(
                     leadingIcon = InvexaIcons.Email,
                     placeholder = stringResource(id = R.string.email_placeholder)
                 )
-                Spacer(modifier = Modifier.height(Spacing.space300))
                 InvexaTextField(
                     value = passValue,
                     onValueChange = onPassChange,
                     label = stringResource(id = R.string.password_label),
                     isPassword = !isPasswordVisible,
                     leadingIcon = InvexaIcons.Password,
-                    placeholder = stringResource(id = R.string.password_placeholder),
+                    placeholder = stringResource(id = R.string.create_password_placeholder),
                     trailingIcon = if (isPasswordVisible) InvexaIcons.Eye else InvexaIcons.EyeOff ,
                     onTrailingIconClick = onPasswordVisibilityToggle,
                     helperText = stringResource(id = R.string.password_helper_text)
                 )
-                Spacer(modifier = Modifier.height(Spacing.space100))
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    InvexaCheckbox(
-                        label = stringResource(id = R.string.remember_me),
-                        checked = checkboxOn,
-                        onCheckedChange = onCheckboxChange
-                    )
-                    InvexaTextButton(
-                        text = stringResource(id = R.string.forgot_password),
-                        onClick = onClickForgotPassword
-                    )
-                }
-                Spacer(modifier = Modifier.height(Spacing.space100))
+
+                InvexaCheckbox(
+                    label = stringResource(id = R.string.terms_and_privacy),
+                    checked = checkboxOn,
+                    onCheckedChange = onCheckboxChange,
+                    modifier = Modifier.fillMaxWidth()
+                )
+
                 InvexaButton(
-                    onClick = onClickLogin,
-                    text = stringResource(id = R.string.login_button),
+                    onClick = onClickCreateAccount,
+                    text = stringResource(id = R.string.create_account_button),
                     modifier = Modifier.fillMaxWidth(),
                     size = ButtonSize.Large,
                 )
-                Spacer(modifier = Modifier.height(Spacing.space100))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = stringResource(id = R.string.new_to_invexa),
+                        text = stringResource(id = R.string.already_have_an_account),
                         color = extend.textTertiary.copy(alpha = 0.8f),
                         style = typography.bodySmall,
                     )
                     InvexaTextButton(
-                        text = stringResource(id = R.string.create_company_account),
-                        onClick = onClickCreateAccount
+                        text = stringResource(id = R.string.login_button),
+                        onClick = onBackToLogin
                     )
                 }
+
             }
-
         }
-        SecurityFooter()
     }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen(
-        onClickLogin = {},
-        onClickForgotPassword = {},
-        onClickCreateAccount = {}
-    )
 }

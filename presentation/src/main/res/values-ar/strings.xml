@@ -8,10 +8,28 @@
     <string name="email_label">البريد الإلكتروني</string>
     <string name="email_placeholder">you@company.com</string>
     <string name="password_label">كلمة المرور</string>
+    <string name="password_placeholder">أدخل كلمة مرورك</string>
     <string name="password_helper_text">8 أحرف على الأقل</string>
     <string name="remember_me">تذكرني</string>
     <string name="forgot_password">هل نسيت كلمة المرور؟</string>
     <string name="login_button">تسجيل الدخول</string>
+
+    <string name="forgot_password_top_bar">نسيت كلمة المرور</string>
+    <string name="forgot_password_title">أعد تعيين كلمة المرور الخاصة بك</string>
+    <string name="forgot_password_description">أدخل عنوان بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور الخاصة بك.</string>
+    <string name="send_reset_button">إرسال رابط إعادة التعيين</string>
+    <string name="back_to_login">العودة إلى تسجيل الدخول</string>
+
+    <string name="register_title">إنشاء حساب شركة</string>
+    <string name="register_description">قم بإعداد مساحة عملك — ستضيف مستودعاتك مباشرة بعد ذلك.</string>
+    <string name="company_name_label">اسم الشركة</string>
+    <string name="company_name_placeholder">مثال: Invexa Solutions</string>
+    <string name="full_name_label">اسمك الكامل</string>
+    <string name="full_name_placeholder">أدخل اسمك</string>
+    <string name="create_password_placeholder">إنشاء كلمة مرور</string>
+    <string name="terms_and_privacy">أوافق على شروط الخدمة وسياسة الخصوصية</string>
+    <string name="create_account_button">إنشاء حساب</string>
+    <string name="already_have_an_account">هل لديك حساب بالفعل؟</string>
 
     <!-- Footer / Create Account -->
     <string name="new_to_invexa">جديد على إنفكسا؟</string>

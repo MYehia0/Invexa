@@ -1,7 +1,6 @@
 package com.example.designsystem.components.atoms
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
@@ -11,6 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -38,6 +38,7 @@ fun InvexaButton(
     trailingIcon: ImageVector? = null,
 ) {
     val tokens = buttonPrimaryTokens()
+    val typography = MaterialTheme.typography
     val shape = RoundedCornerShape(tokens.shape)
     val isDisabled = isLoading || !enabled
 
@@ -66,7 +67,7 @@ fun InvexaButton(
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
                 if (hasLeadingIconSpacing) Spacer(Modifier.width(Spacing.space100))
-                text?.let { Text(text = it, color = tokens.content) }
+                text?.let { Text(text = it, color = tokens.content, style = typography.bodyLarge) }
                 if (hasTrailingIconSpacing) Spacer(Modifier.width(Spacing.space100))
                 trailingIcon?.let {
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))

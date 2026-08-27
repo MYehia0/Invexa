@@ -1,18 +1,22 @@
 package com.example.designsystem.icons
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowBackIos
+import androidx.compose.material.icons.filled.Apartment
 import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Dashboard
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Inventory2
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SearchOff
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Summarize
 import androidx.compose.material.icons.filled.WarningAmber
+import androidx.compose.material.icons.outlined.ArrowBackIos
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material.icons.outlined.Visibility
@@ -36,4 +40,8 @@ object InvexaIcons {
     val Eye: ImageVector = Icons.Outlined.Visibility
     val EyeOff: ImageVector = Icons.Outlined.VisibilityOff
     val Shield: ImageVector = Icons.Outlined.Shield
+    val Back: ImageVector = Icons.AutoMirrored.Outlined.ArrowBackIos
+    val Username: ImageVector = Icons.Filled.Person
+    val Company: ImageVector = Icons.Filled.Apartment
+
 }

@@ -15,13 +15,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.unit.dp
+import com.example.designsystem.icons.InvexaIcons
 import com.example.designsystem.tokens.component.appBarTokens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InvexaAppBar(
     modifier: Modifier = Modifier,
-    title: String,
+    title: String? = null,
     onBackClick: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {},
 ) {
@@ -43,7 +44,7 @@ fun InvexaAppBar(
             onBackClick?.let {
                 IconButton(onClick = it) {
                     Icon(
-                        Icons.AutoMirrored.Filled.ArrowBack,
+                        InvexaIcons.Back,
                         contentDescription = "Back",
                         tint = tokens.icon
                     )
@@ -51,11 +52,13 @@ fun InvexaAppBar(
             }
         },
         title = {
-            Text(
-                title,
-                color = tokens.title,
-                modifier = Modifier
-            )
+            title?.let {
+                Text(
+                    it,
+                    color = tokens.title,
+                    modifier = Modifier
+                )
+            }
         },
         actions = actions
     )

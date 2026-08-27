@@ -8,10 +8,28 @@
     <string name="email_label">Email</string>
     <string name="email_placeholder">you@company.com</string>
     <string name="password_label">Password</string>
+    <string name="password_placeholder">Enter your password</string>
     <string name="password_helper_text">At least 8 characters</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forget Password?</string>
     <string name="login_button">Login</string>
+
+    <string name="forgot_password_top_bar">Forgot Password</string>
+    <string name="forgot_password_title">Reset your password</string>
+    <string name="forgot_password_description">Enter your email address and we\'ll send you a link to reset your password.</string>
+    <string name="send_reset_button">Send Reset Link</string>
+    <string name="back_to_login">Back To Login</string>
+
+    <string name="register_title">Create Company Account</string>
+    <string name="register_description">Set up your workspace — you\'ll add your warehouses right after.</string>
+    <string name="company_name_label">Company Name</string>
+    <string name="company_name_placeholder">e.g. Invexa Solutions</string>
+    <string name="full_name_label">Your Full Name</string>
+    <string name="full_name_placeholder">Enter your name</string>
+    <string name="create_password_placeholder">Create a password</string>
+    <string name="terms_and_privacy">I agree to the Terms of Service and Privacy Policy</string>
+    <string name="create_account_button">Create Account</string>
+    <string name="already_have_an_account">Already have an account?</string>
 
     <!-- Footer / Create Account -->
     <string name="new_to_invexa">New to Invexa?</string>
