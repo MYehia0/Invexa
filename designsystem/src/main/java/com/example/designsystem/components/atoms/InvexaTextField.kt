@@ -115,7 +115,6 @@ object InvexaTextFieldDefaults {
     @Composable
     fun colors(): TextFieldColors {
         val tokens = inputTokens()
-        val colorScheme = MaterialTheme.colorScheme
 
         return OutlinedTextFieldDefaults.colors(
             focusedBorderColor = tokens.borderFocused,

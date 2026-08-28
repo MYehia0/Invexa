@@ -3,11 +3,13 @@ package com.example.designsystem.components.organisms
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -27,6 +29,7 @@ fun InvexaAppBar(
     actions: @Composable RowScope.() -> Unit = {},
 ) {
     val tokens = appBarTokens()
+    val typography = MaterialTheme.typography
 
     TopAppBar(
         modifier = modifier
@@ -46,7 +49,8 @@ fun InvexaAppBar(
                     Icon(
                         InvexaIcons.Back,
                         contentDescription = "Back",
-                        tint = tokens.icon
+                        tint = tokens.icon,
+                        modifier = Modifier.size(18.dp)
                     )
                 }
             }
@@ -56,7 +60,7 @@ fun InvexaAppBar(
                 Text(
                     it,
                     color = tokens.title,
-                    modifier = Modifier
+                    style = typography.titleMedium,
                 )
             }
         },

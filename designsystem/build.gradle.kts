@@ -36,6 +36,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.google.material)
     implementation(libs.coil.compose)

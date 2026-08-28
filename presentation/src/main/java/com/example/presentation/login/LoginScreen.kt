@@ -101,7 +101,7 @@ fun LoginScreenContent(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = Spacing.space500, vertical = Spacing.space500),
+                    .padding(horizontal = Spacing.space450, vertical = Spacing.space400),
             ) {
                 InvexaTextField(
                     value = emailValue,
@@ -110,7 +110,7 @@ fun LoginScreenContent(
                     leadingIcon = InvexaIcons.Email,
                     placeholder = stringResource(id = R.string.email_placeholder)
                 )
-                Spacer(modifier = Modifier.height(Spacing.space300))
+                Spacer(modifier = Modifier.height(Spacing.space100))
                 InvexaTextField(
                     value = passValue,
                     onValueChange = onPassChange,
@@ -122,7 +122,6 @@ fun LoginScreenContent(
                     onTrailingIconClick = onPasswordVisibilityToggle,
                     helperText = stringResource(id = R.string.password_helper_text)
                 )
-                Spacer(modifier = Modifier.height(Spacing.space100))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -138,14 +137,12 @@ fun LoginScreenContent(
                         onClick = onClickForgotPassword
                     )
                 }
-                Spacer(modifier = Modifier.height(Spacing.space100))
                 InvexaButton(
                     onClick = onClickLogin,
                     text = stringResource(id = R.string.login_button),
                     modifier = Modifier.fillMaxWidth(),
                     size = ButtonSize.Large,
                 )
-                Spacer(modifier = Modifier.height(Spacing.space100))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,

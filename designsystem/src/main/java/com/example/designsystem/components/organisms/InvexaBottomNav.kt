@@ -47,7 +47,7 @@ fun InvexaBottomNav(
             },
         containerColor = tokens.container,
     ) {
-        items.take(2).forEachIndexed { index, item ->
+        items.take((items.size/2)).forEachIndexed { index, item ->
             NavItem(
                 item = item,
                 tokens = tokens,
@@ -58,8 +58,8 @@ fun InvexaBottomNav(
             )
         }
         Spacer(modifier = Modifier.width(72.dp))
-        items.drop(2).take(2).forEachIndexed { index, item ->
-            val actualIndex = index + 2
+        items.drop((items.size/2)).take((items.size/2)).forEachIndexed { index, item ->
+            val actualIndex = index + (items.size/2)
             NavItem(
                 item = item,
                 tokens = tokens,

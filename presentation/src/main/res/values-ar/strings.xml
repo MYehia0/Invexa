@@ -31,6 +31,17 @@
     <string name="create_account_button">إنشاء حساب</string>
     <string name="already_have_an_account">هل لديك حساب بالفعل؟</string>
 
+    <string name="warehouse_onboarding_title">أضف مستودعك الأول</string>
+    <string name="warehouse_onboarding_description">أنت مدير المستودع - حدد موقع تخزين بضائعك. يمكنك إضافة المزيد في أي وقت من إعدادات الشركة.</string>
+    <string name="warehouse_name_label">اسم المستودع</string>
+    <string name="warehouse_name_placeholder">مثال: المستودع الرئيسي</string>
+    <string name="location_label">الموقع</string>
+    <string name="location_placeholder">مثال: القاهرة، مصر</string>
+    <string name="warehouse_type_label">نوع المستودع</string>
+    <string name="finish_setup_button">إنهاء الإعداد</string>
+    <string name="skip_for_now">تخطي</string>
+    <string name="warehouse_onboarding_hint">ستحتاج إلى مستودع قبل أول عملية تدقيق</string>
+
     <!-- Footer / Create Account -->
     <string name="new_to_invexa">جديد على إنفكسا؟</string>
     <string name="create_company_account">أنشئ حساب شركتك</string>

@@ -36,7 +36,7 @@ import com.example.presentation.R
 @Composable
 fun RegisterScreen (
     onClickCreateAccount: () -> Unit,
-    onBackToLogin: () -> Unit
+    onBack: () -> Unit
 ) {
     var emailValue by remember { mutableStateOf("") }
     var companyNameValue by remember { mutableStateOf("") }
@@ -59,7 +59,7 @@ fun RegisterScreen (
         isPasswordVisible = isPasswordVisible,
         onPasswordVisibilityToggle = { isPasswordVisible = !isPasswordVisible },
         onClickCreateAccount = onClickCreateAccount,
-        onBackToLogin = onBackToLogin
+        onBack = onBack
     )
 }
 
@@ -78,7 +78,7 @@ fun RegisterScreenContent (
     isPasswordVisible: Boolean,
     onPasswordVisibilityToggle: () -> Unit,
     onClickCreateAccount: () -> Unit,
-    onBackToLogin: () -> Unit
+    onBack: () -> Unit
 ) {
     val scrollState = rememberScrollState()
 
@@ -89,7 +89,7 @@ fun RegisterScreenContent (
     Scaffold(
         topBar = {
             InvexaAppBar(
-                onBackClick = onBackToLogin
+                onBackClick = onBack
             )
         }
     ){
@@ -97,7 +97,7 @@ fun RegisterScreenContent (
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it)
-                .padding(horizontal = Spacing.space500, vertical = Spacing.space600)
+                .padding(horizontal = Spacing.space450, vertical = Spacing.space600)
                 .verticalScroll(scrollState),
         ) {
             InvexaStepProgressBar(totalSteps = 2, currentStep = 1)
@@ -116,17 +116,10 @@ fun RegisterScreenContent (
 
             Column(
                 modifier = Modifier
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(Spacing.space400)
+                    .fillMaxWidth()
+                    .padding(vertical = Spacing.space300),
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-
-                InvexaTextField(
-                    value = companyNameValue,
-                    onValueChange = onCompanyNameChange,
-                    label = stringResource(id = R.string.company_name_label),
-                    leadingIcon = InvexaIcons.Company,
-                    placeholder = stringResource(id = R.string.company_name_placeholder)
-                )
                 InvexaTextField(
                     value = fullNameValue,
                     onValueChange = onFullNameChange,
@@ -134,7 +127,15 @@ fun RegisterScreenContent (
                     leadingIcon = InvexaIcons.Username,
                     placeholder = stringResource(id = R.string.full_name_placeholder)
                 )
-
+                Spacer(modifier = Modifier.height(Spacing.space100))
+                InvexaTextField(
+                    value = companyNameValue,
+                    onValueChange = onCompanyNameChange,
+                    label = stringResource(id = R.string.company_name_label),
+                    leadingIcon = InvexaIcons.Company,
+                    placeholder = stringResource(id = R.string.company_name_placeholder)
+                )
+                Spacer(modifier = Modifier.height(Spacing.space100))
                 InvexaTextField(
                     value = emailValue,
                     onValueChange = onEmailChange,
@@ -142,6 +143,7 @@ fun RegisterScreenContent (
                     leadingIcon = InvexaIcons.Email,
                     placeholder = stringResource(id = R.string.email_placeholder)
                 )
+                Spacer(modifier = Modifier.height(Spacing.space100))
                 InvexaTextField(
                     value = passValue,
                     onValueChange = onPassChange,
@@ -153,14 +155,14 @@ fun RegisterScreenContent (
                     onTrailingIconClick = onPasswordVisibilityToggle,
                     helperText = stringResource(id = R.string.password_helper_text)
                 )
-
+                Spacer(modifier = Modifier.height(Spacing.space300))
                 InvexaCheckbox(
                     label = stringResource(id = R.string.terms_and_privacy),
                     checked = checkboxOn,
                     onCheckedChange = onCheckboxChange,
                     modifier = Modifier.fillMaxWidth()
                 )
-
+                Spacer(modifier = Modifier.height(Spacing.space300))
                 InvexaButton(
                     onClick = onClickCreateAccount,
                     text = stringResource(id = R.string.create_account_button),
@@ -179,7 +181,7 @@ fun RegisterScreenContent (
                     )
                     InvexaTextButton(
                         text = stringResource(id = R.string.login_button),
-                        onClick = onBackToLogin
+                        onClick = onBack
                     )
                 }
 

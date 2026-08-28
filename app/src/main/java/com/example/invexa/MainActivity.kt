@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.designsystem.preview.Screen
 import com.example.designsystem.theme.InvexaTheme
 import com.example.presentation.ForgotPassword.ForgotPasswordScreen
+import com.example.presentation.home.HomeScreen
 import com.example.presentation.login.LoginScreen
 import com.example.presentation.register.RegisterScreen
 import com.example.presentation.register.WarehouseOnboardingScreen
@@ -40,7 +41,8 @@ class MainActivity : ComponentActivity() {
                         composable("login") {
                             LoginScreen(
                                 onClickLogin = {
-                                    navController.navigate("preview")
+//                                    navController.navigate("preview")
+                                    navController.navigate("home")
                                 },
                                 onClickForgotPassword = {
                                     navController.navigate("forgot_password")
@@ -55,14 +57,23 @@ class MainActivity : ComponentActivity() {
                                 onClickCreateAccount = {
                                     navController.navigate("warehouse_onboarding")
                                 },
-                                onBackToLogin = {
+                                onBack = {
                                     navController.popBackStack()
                                 }
                             )
                         }
                         composable("warehouse_onboarding") {
                             WarehouseOnboardingScreen(
-                                onBackToLogin = {
+                                onFinishSetupClick = {
+//                                    navController.navigate("preview")
+                                    navController.navigate("home")
+                                },
+                                onSkipClick = {
+//                                    navController.navigate("preview")
+                                    navController.navigate("home")
+
+                                },
+                                onBack = {
                                     navController.popBackStack()
                                 }
                             )
@@ -74,6 +85,9 @@ class MainActivity : ComponentActivity() {
                                     navController.popBackStack()
                                 }
                             )
+                        }
+                        composable("home") {
+                            HomeScreen()
                         }
                         composable("preview") {
                             Screen()

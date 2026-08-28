@@ -21,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -72,34 +73,30 @@ fun ForgotPasswordScreenContent (
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it)
-                .padding(horizontal = Spacing.space500, vertical = Spacing.space500)
+                .padding(horizontal = Spacing.space450, vertical = Spacing.space600)
                 .verticalScroll(scrollState),
-            verticalArrangement = Arrangement.spacedBy(Spacing.space300)
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(Modifier.height(Spacing.space200))
             Icon(
                 imageVector = InvexaIcons.Password,
                 contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .size(56.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .size(48.dp)
             )
-            Spacer(Modifier.height(Spacing.space100))
+            Spacer(Modifier.height(Spacing.space300))
             Text(
                 text = stringResource(R.string.forgot_password_title),
-                style = typography.headlineLarge,
+                style = typography.titleLarge,
                 color = colors.onBackground,
-                modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
             Text(
                 text = stringResource(R.string.forgot_password_description),
-                style = typography.bodyMedium,
+                style = typography.bodySmall,
                 color = colors.onBackground,
-                modifier = Modifier.fillMaxWidth().padding(Spacing.space200),
                 textAlign = TextAlign.Center
             )
+            Spacer(Modifier.height(Spacing.space300))
             InvexaTextField(
                 value = emailValue,
                 onValueChange = onEmailChange,
@@ -107,7 +104,7 @@ fun ForgotPasswordScreenContent (
                 leadingIcon = InvexaIcons.Email,
                 placeholder = stringResource(id = R.string.email_placeholder)
             )
-            Spacer(modifier = Modifier.height(Spacing.space100))
+            Spacer(Modifier.height(Spacing.space300))
             InvexaButton(
                 onClick = onSendResetClick,
                 text = stringResource(id = R.string.send_reset_button),
@@ -117,7 +114,6 @@ fun ForgotPasswordScreenContent (
             InvexaTextButton(
                 onClick = onBackToLoginClick,
                 text = stringResource(id = R.string.back_to_login),
-                modifier = Modifier.fillMaxWidth(),
             )
 
         }
