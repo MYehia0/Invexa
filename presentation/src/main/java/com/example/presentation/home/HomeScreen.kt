@@ -42,19 +42,23 @@ import com.example.presentation.home.dashboard.DashboardScreen
 import com.example.presentation.home.dashboard.QuickActionsModelUI
 
 @Composable
-fun HomeScreen () {
+fun HomeScreen (
+    onStartScanning: ()-> Unit
+) {
     var navIndex by remember { mutableIntStateOf(0) }
 
     HomeScreenContent(
         navIndex = navIndex,
-        onNavItemSelected = { navIndex = it }
+        onNavItemSelected = { navIndex = it },
+        onStartScanning = onStartScanning
     )
 }
 
 @Composable
 private fun HomeScreenContent (
     navIndex: Int,
-    onNavItemSelected: (Int) -> Unit
+    onNavItemSelected: (Int) -> Unit,
+    onStartScanning: ()-> Unit
 ) {
     val typography = MaterialTheme.typography
     val extend = MaterialTheme.invexaColors
@@ -110,7 +114,7 @@ private fun HomeScreenContent (
         floatingActionButton = {
             InvexaCenterFab(
                 icon = InvexaIcons.Scan,
-                onFabClick = {},
+                onFabClick = onStartScanning,
             )
         },
         floatingActionButtonPosition = FabPosition.Center

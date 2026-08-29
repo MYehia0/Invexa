@@ -76,6 +76,10 @@
     <string name="electronics_warehouse_audit">Electronics Warehouse Audit</string>
     <string name="electronics_warehouse">Electronics Warehouse</string>
 
+    <string name="start_scanning">Start Scanning</string>
+    <string name="pick_an_audit_to_continue_scanning_or_start_a_new_one">Pick an audit to continue scanning, or start a new one.</string>
+    <string name="start_a_new_audit">Start a New Audit</string>
+
     <string name="new_to_invexa">New to Invexa?</string>
     <string name="create_company_account">Create your company account</string>
     <string name="secured_by_enterprise">Secured by enterprise-grade security</string>

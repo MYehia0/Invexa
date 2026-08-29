@@ -75,6 +75,9 @@
     <string name="electronics_warehouse_audit">جرد مستودع الإلكترونيات</string>
     <string name="electronics_warehouse">مستودع الإلكترونيات</string>
 
+    <string name="start_scanning">بدء المسح</string>
+    <string name="pick_an_audit_to_continue_scanning_or_start_a_new_one">اختر عملية تدقيق لمتابعة المسح، أو ابدأ عملية جديدة.</string>
+    <string name="start_a_new_audit">بدء عملية تدقيق جديدة</string>
 
     <string name="new_to_invexa">جديد على Invexa؟</string>
     <string name="create_company_account">أنشئ حساب شركتك</string>
