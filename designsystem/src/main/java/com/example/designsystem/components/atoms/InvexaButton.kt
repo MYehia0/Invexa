@@ -24,6 +24,7 @@ import com.example.designsystem.tokens.component.ButtonSize
 import com.example.designsystem.tokens.component.buttonPrimaryTokens
 import com.example.designsystem.tokens.component.contentPadding
 import com.example.designsystem.tokens.component.iconSize
+import com.example.designsystem.tokens.component.textStyle
 import com.example.designsystem.tokens.raw.Spacing
 
 @Composable
@@ -67,7 +68,7 @@ fun InvexaButton(
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
                 if (hasLeadingIconSpacing) Spacer(Modifier.width(Spacing.space100))
-                text?.let { Text(text = it, color = tokens.content, style = typography.titleSmall) }
+                text?.let { Text(text = it, color = tokens.content, style = size.textStyle()) }
                 if (hasTrailingIconSpacing) Spacer(Modifier.width(Spacing.space100))
                 trailingIcon?.let {
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))

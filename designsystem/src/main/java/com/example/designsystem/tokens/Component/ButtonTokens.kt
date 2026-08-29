@@ -5,6 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.theme.gradients
@@ -25,6 +26,14 @@ fun ButtonSize.iconSize(): Dp = when (this) {
     ButtonSize.Small -> 14.dp
     ButtonSize.Medium -> 18.dp
     ButtonSize.Large -> 20.dp
+}
+
+@Composable
+@ReadOnlyComposable
+fun ButtonSize.textStyle(): TextStyle = when (this) {
+    ButtonSize.Small -> MaterialTheme.typography.bodyMedium
+    ButtonSize.Medium -> MaterialTheme.typography.bodyLarge
+    ButtonSize.Large -> MaterialTheme.typography.titleSmall
 }
 
 data class ButtonPrimaryTokens(

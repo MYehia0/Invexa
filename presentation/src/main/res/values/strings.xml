@@ -65,6 +65,11 @@
     <string name="new_audit">New Audit</string>
     <string name="continue_audit">Continue Audit</string>
 
+    <string name="new_button">New</string>
+    <string name="audit_sessions">Audit Sessions</string>
+    <string name="track_progress_across_every_warehouse_audit">Track progress across every warehouse audit</string>
+    <string name="search_audit_sessions">Search audit sessions</string>
+
     <!-- test data -->
     <string name="main_warehouse_audit">Main Warehouse Audit</string>
     <string name="main_warehouse">Main Warehouse</string>

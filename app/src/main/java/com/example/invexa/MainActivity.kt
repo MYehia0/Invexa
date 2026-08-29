@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             val isAppInDarkTheme = false
+//            val isAppInDarkTheme = true
 
             val view = LocalView.current
             SideEffect {

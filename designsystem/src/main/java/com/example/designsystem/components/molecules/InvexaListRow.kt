@@ -49,7 +49,7 @@ fun InvexaListRow(
             .border(1.dp, tokens.border, shape)
             .clip(shape)
             .let { if (onClick != null) it.clickable(onClick = onClick) else it }
-            .padding(vertical = Spacing.space300, horizontal = Spacing.space400),
+            .padding(vertical = Spacing.space450, horizontal = Spacing.space400),
 
         verticalAlignment = Alignment.CenterVertically,
     ) {

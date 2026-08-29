@@ -184,7 +184,107 @@ private fun HomeScreenContent (
                 )
             }
             else if (navIndex == 1) {
-                AuditScreen()
+                AuditScreen(
+                    audits = listOf(
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.main_warehouse_audit),
+                            subtitle = stringResource(R.string.main_warehouse),
+                            badge = stringResource(R.string.in_progress),
+                            icon = InvexaIcons.Sessions,
+                            status = AuditStatusTone.Progress,
+                            onClick = {}
+                        ),
+                        AuditModelUI(
+                            title = stringResource(R.string.electronics_warehouse_audit),
+                            subtitle = stringResource(R.string.electronics_warehouse),
+                            badge = stringResource(R.string.completed),
+                            status = AuditStatusTone.Completed,
+                            icon = InvexaIcons.Check,
+                            onClick = {}
+                        ),
+                    ),
+                    onClickNew = {}
+                )
             }
         }
     }

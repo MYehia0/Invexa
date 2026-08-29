@@ -64,6 +64,11 @@
     <string name="new_audit">جرد جديد</string>
     <string name="continue_audit">متابعة الجرد</string>
 
+    <string name="new_button">إضافة</string>
+    <string name="audit_sessions">جلسات التدقيق</string>
+    <string name="track_progress_across_every_warehouse_audit">تتبّع التقدم في جميع عمليات تدقيق المستودعات</string>
+    <string name="search_audit_sessions">البحث في جلسات التدقيق</string>
+
     <!-- test data -->
     <string name="main_warehouse_audit">جرد المستودع الرئيسي</string>
     <string name="main_warehouse">المستودع الرئيسي</string>
