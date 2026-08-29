@@ -67,7 +67,7 @@ fun InvexaButton(
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))
                 }
                 if (hasLeadingIconSpacing) Spacer(Modifier.width(Spacing.space100))
-                text?.let { Text(text = it, color = tokens.content, style = typography.bodyLarge) }
+                text?.let { Text(text = it, color = tokens.content, style = typography.titleSmall) }
                 if (hasTrailingIconSpacing) Spacer(Modifier.width(Spacing.space100))
                 trailingIcon?.let {
                     Icon(imageVector = it, contentDescription = text, tint = tokens.content, modifier = Modifier.size(iconSize))

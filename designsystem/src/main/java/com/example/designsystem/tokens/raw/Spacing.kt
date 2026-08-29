@@ -3,6 +3,7 @@ package com.example.designsystem.tokens.raw
 import androidx.compose.ui.unit.dp
 
 object Spacing {
+    val space50 = 2.dp
     val space100 = 4.dp
     val space200 = 8.dp
     val space300 = 12.dp

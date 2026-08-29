@@ -19,7 +19,7 @@ import com.example.designsystem.tokens.semantic.SemanticShapes
 @Composable
 fun InvexaHeader(
     modifier: Modifier = Modifier,
-    heightHeader: Dp = 180.dp,
+    heightHeader: Dp = 110.dp,
     alignment: Alignment = Alignment.TopStart,
     content: @Composable () -> Unit
 ) {

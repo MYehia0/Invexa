@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -37,14 +38,15 @@ fun InvexaBottomNav(
     NavigationBar(
         modifier = modifier
             .fillMaxWidth()
-            .drawBehind {
-                drawLine(
-                    brush = Brush.horizontalGradient(tokens.topBorderGradient),
-                    start = Offset(0f, 0f),
-                    end = Offset(size.width, 0f),
-                    strokeWidth = 1.5.dp.toPx(),
-                )
-            },
+//            .drawBehind {
+//                drawLine(
+//                    brush = Brush.horizontalGradient(tokens.topBorderGradient),
+//                    start = Offset(0f, 0f),
+//                    end = Offset(size.width, 0f),
+//                    strokeWidth = 1.5.dp.toPx(),
+//                )
+//            }
+        ,
         containerColor = tokens.container,
     ) {
         items.take((items.size/2)).forEachIndexed { index, item ->
@@ -81,6 +83,7 @@ private fun RowScope.NavItem(
     onClick: () -> Unit,
 ) {
     val tint = if (selected) tokens.itemActive else tokens.itemInactive
+    val colors = MaterialTheme.colorScheme
 
     NavigationBarItem(
         modifier = modifier,
@@ -90,7 +93,8 @@ private fun RowScope.NavItem(
         colors = NavigationBarItemDefaults.colors(
             selectedIconColor = tokens.itemActive,
             selectedTextColor= tokens.itemActive,
-            indicatorColor = Color.Transparent,
+            indicatorColor = colors.primaryContainer,
+//            indicatorColor = Color.Transparent,
             unselectedIconColor = tokens.itemInactive,
             unselectedTextColor = tokens.itemInactive,
             disabledIconColor = Color.Transparent,

@@ -52,6 +52,7 @@ data class SemanticColors(
     val textMuted: Color,
     val iconDefault: Color,
     val iconMuted: Color,
+    val appBarHome: Color
 )
 
 val LightSemanticColors = SemanticColors(
@@ -68,12 +69,12 @@ val LightSemanticColors = SemanticColors(
 
     success = ColorPalette.green.t600,
     onSuccess = ColorPalette.neutral.n0,
-    successContainer = ColorPalette.green.t50,
+    successContainer = ColorPalette.green.t100,
     onSuccessContainer = ColorPalette.green.t700,
 
     warning = ColorPalette.amber.t600,
     onWarning = ColorPalette.neutral.n0,
-    warningContainer = ColorPalette.amber.t50,
+    warningContainer = ColorPalette.amber.t100,
     onWarningContainer = ColorPalette.amber.t700,
 
     error = ColorPalette.red.t600,
@@ -103,6 +104,7 @@ val LightSemanticColors = SemanticColors(
     textMuted = ColorPalette.neutral.n400,
     iconDefault = ColorPalette.neutral.n700,
     iconMuted = ColorPalette.neutral.n400,
+    appBarHome = ColorPalette.blue.t500,
 )
 
 val DarkSemanticColors = SemanticColors(
@@ -152,4 +154,5 @@ val DarkSemanticColors = SemanticColors(
     textMuted = ColorPalette.neutralDark.text500,
     iconDefault = ColorPalette.neutralDark.text300,
     iconMuted = ColorPalette.neutralDark.text500,
+    appBarHome = ColorPalette.blue.t500,
 )

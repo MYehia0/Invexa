@@ -27,6 +27,8 @@ data class InvexaExtendedColors(
     val textMuted: Color,
     val iconDefault: Color,
     val iconMuted: Color,
+
+    val appBarHome: Color
 )
 
 fun InvexaExtendedColors(semantic: SemanticColors) = InvexaExtendedColors(
@@ -52,6 +54,7 @@ fun InvexaExtendedColors(semantic: SemanticColors) = InvexaExtendedColors(
     textMuted = semantic.textMuted,
     iconDefault = semantic.iconDefault,
     iconMuted = semantic.iconMuted,
+    appBarHome = semantic.appBarHome
 )
 
 data class InvexaGradients(

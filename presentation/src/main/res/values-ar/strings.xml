@@ -1,49 +1,77 @@
 <resources>
     <!-- Header -->
-    <string name="app_name">إنفكسا</string>
-    <string name="welcome_back">مرحباً بعودتك</string>
-    <string name="sign_in_to_continue">قم بتسجيل الدخول للمتابعة إلى حسابك</string>
+    <string name="app_name">Invexa</string>
+    <string name="welcome_back">مرحبًا بعودتك</string>
+    <string name="sign_in_to_continue">سجّل الدخول للمتابعة إلى حسابك</string>
 
     <!-- Login Form -->
     <string name="email_label">البريد الإلكتروني</string>
     <string name="email_placeholder">you@company.com</string>
     <string name="password_label">كلمة المرور</string>
-    <string name="password_placeholder">أدخل كلمة مرورك</string>
+    <string name="password_placeholder">أدخل كلمة المرور</string>
     <string name="password_helper_text">8 أحرف على الأقل</string>
     <string name="remember_me">تذكرني</string>
-    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
     <string name="login_button">تسجيل الدخول</string>
 
     <string name="forgot_password_top_bar">نسيت كلمة المرور</string>
-    <string name="forgot_password_title">أعد تعيين كلمة المرور الخاصة بك</string>
-    <string name="forgot_password_description">أدخل عنوان بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور الخاصة بك.</string>
+    <string name="forgot_password_title">إعادة تعيين كلمة المرور</string>
+    <string name="forgot_password_description">أدخل عنوان بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور.</string>
     <string name="send_reset_button">إرسال رابط إعادة التعيين</string>
     <string name="back_to_login">العودة إلى تسجيل الدخول</string>
 
     <string name="register_title">إنشاء حساب شركة</string>
-    <string name="register_description">قم بإعداد مساحة عملك — ستضيف مستودعاتك مباشرة بعد ذلك.</string>
+    <string name="register_description">أنشئ مساحة العمل الخاصة بك — ستتمكن من إضافة مستودعاتك بعد ذلك مباشرةً.</string>
     <string name="company_name_label">اسم الشركة</string>
     <string name="company_name_placeholder">مثال: Invexa Solutions</string>
-    <string name="full_name_label">اسمك الكامل</string>
+    <string name="full_name_label">الاسم بالكامل</string>
     <string name="full_name_placeholder">أدخل اسمك</string>
-    <string name="create_password_placeholder">إنشاء كلمة مرور</string>
+    <string name="create_password_placeholder">أنشئ كلمة مرور</string>
     <string name="terms_and_privacy">أوافق على شروط الخدمة وسياسة الخصوصية</string>
-    <string name="create_account_button">إنشاء حساب</string>
-    <string name="already_have_an_account">هل لديك حساب بالفعل؟</string>
+    <string name="create_account_button">إنشاء الحساب</string>
+    <string name="already_have_an_account">لديك حساب بالفعل؟</string>
 
-    <string name="warehouse_onboarding_title">أضف مستودعك الأول</string>
-    <string name="warehouse_onboarding_description">أنت مدير المستودع - حدد موقع تخزين بضائعك. يمكنك إضافة المزيد في أي وقت من إعدادات الشركة.</string>
+    <string name="warehouse_onboarding_title">أضف أول مستودع لك</string>
+    <string name="warehouse_onboarding_description">بصفتك مدير المستودع، قم بإعداد المكان الذي يتم فيه تخزين مخزونك. يمكنك إضافة المزيد من المستودعات في أي وقت من إعدادات الشركة.</string>
     <string name="warehouse_name_label">اسم المستودع</string>
     <string name="warehouse_name_placeholder">مثال: المستودع الرئيسي</string>
     <string name="location_label">الموقع</string>
     <string name="location_placeholder">مثال: القاهرة، مصر</string>
     <string name="warehouse_type_label">نوع المستودع</string>
     <string name="finish_setup_button">إنهاء الإعداد</string>
-    <string name="skip_for_now">تخطي</string>
-    <string name="warehouse_onboarding_hint">ستحتاج إلى مستودع قبل أول عملية تدقيق</string>
+    <string name="skip_for_now">تخطي الآن</string>
+    <string name="warehouse_onboarding_hint">ستحتاج إلى مستودع قبل إجراء أول عملية جرد</string>
 
-    <!-- Footer / Create Account -->
-    <string name="new_to_invexa">جديد على إنفكسا؟</string>
+    <string name="home">الرئيسية</string>
+    <string name="audits">عمليات الجرد</string>
+
+    <string name="dashboard_subtitle">إليك ما يحدث في عمليات الجرد الخاصة بك اليوم.</string>
+
+    <string name="no_audits_title">لا توجد عمليات جرد حتى الآن</string>
+    <string name="no_audits_description">بمجرد إنشاء أول عملية جرد، ستظهر إحصائياتك ونشاطك هنا.</string>
+    <string name="create_your_first_audit_button">إنشاء أول عملية جرد</string>
+
+    <string name="active_audits">عمليات الجرد النشطة</string>
+    <string name="completed">مكتملة</string>
+    <string name="pending_sync">في انتظار المزامنة</string>
+    <string name="scanned_today">تم جردها اليوم</string>
+    <string name="in_progress">قيد التنفيذ</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="error">خطأ</string>
+
+    <string name="quick_actions">إجراءات سريعة</string>
+    <string name="last_activity">آخر نشاط</string>
+    <string name="new_audit">جرد جديد</string>
+    <string name="continue_audit">متابعة الجرد</string>
+
+    <!-- test data -->
+    <string name="main_warehouse_audit">جرد المستودع الرئيسي</string>
+    <string name="main_warehouse">المستودع الرئيسي</string>
+    <string name="electronics_warehouse_audit">جرد مستودع الإلكترونيات</string>
+    <string name="electronics_warehouse">مستودع الإلكترونيات</string>
+
+
+    <string name="new_to_invexa">جديد على Invexa؟</string>
     <string name="create_company_account">أنشئ حساب شركتك</string>
-    <string name="secured_by_enterprise">مؤمن بواسطة أمان على مستوى المؤسسات</string>
+    <string name="secured_by_enterprise">مؤمّن بأمان على مستوى المؤسسات</string>
 </resources>

@@ -42,7 +42,35 @@
     <string name="skip_for_now">Skip for now</string>
     <string name="warehouse_onboarding_hint">You\'ll need a warehouse before your first audit</string>
 
-    <!-- Footer / Create Account -->
+    <string name="home">Home</string>
+    <string name="audits">Audits</string>
+
+    <string name="dashboard_subtitle">Here\'s what\'s happening with your audits today.</string>
+
+    <string name="no_audits_title">No audits yet</string>
+    <string name="no_audits_description">Once you create your first audit, your stats and activity will show up here.</string>
+    <string name="create_your_first_audit_button">Create Your First Audit</string>
+
+    <string name="active_audits">Active Audits</string>
+    <string name="completed">Completed</string>
+    <string name="pending_sync">Pending Sync</string>
+    <string name="scanned_today">Scanned Today</string>
+    <string name="in_progress">In Progress</string>
+    <string name="pending">Pending</string>
+    <string name="error">Error</string>
+
+    <string name="quick_actions">Quick Actions</string>
+    <string name="last_activity">Last Activity</string>
+
+    <string name="new_audit">New Audit</string>
+    <string name="continue_audit">Continue Audit</string>
+
+    <!-- test data -->
+    <string name="main_warehouse_audit">Main Warehouse Audit</string>
+    <string name="main_warehouse">Main Warehouse</string>
+    <string name="electronics_warehouse_audit">Electronics Warehouse Audit</string>
+    <string name="electronics_warehouse">Electronics Warehouse</string>
+
     <string name="new_to_invexa">New to Invexa?</string>
     <string name="create_company_account">Create your company account</string>
     <string name="secured_by_enterprise">Secured by enterprise-grade security</string>

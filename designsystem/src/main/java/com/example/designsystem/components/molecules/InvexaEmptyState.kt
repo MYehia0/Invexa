@@ -25,6 +25,7 @@ fun InvexaEmptyState(
     onButtonClick: (() -> Unit) ? = null,
 ){
     val extended = MaterialTheme.invexaColors
+    val typography = MaterialTheme.typography
 
     Column(
         modifier = modifier
@@ -38,11 +39,17 @@ fun InvexaEmptyState(
             tint = extended.iconMuted,
             modifier = Modifier.padding(bottom = Spacing.space400),
         )
-        Text(text = title, color = extended.textPrimary, textAlign = TextAlign.Center)
+        Text(
+            text = title,
+            color = extended.textPrimary,
+            textAlign = TextAlign.Center,
+            style = typography.titleSmall
+        )
         description?.let{
             Text(
                 text = it,
                 color = extended.textSecondary,
+                style = typography.bodySmall,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(top = Spacing.space100),
             )

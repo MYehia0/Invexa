@@ -70,7 +70,7 @@ fun Screen() {
         bottomBar = {
             InvexaBottomNav(
                 items = listOf(
-                    BottomNavItem("Home", InvexaIcons.Dashboard),
+                    BottomNavItem("Home", InvexaIcons.Home),
                     BottomNavItem("Sessions", InvexaIcons.Sessions),
                     BottomNavItem("Reports", InvexaIcons.Reports),
                     BottomNavItem("Settings", InvexaIcons.Settings),
